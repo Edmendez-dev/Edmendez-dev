@@ -1,0 +1,47 @@
+name: GitIgnite Profile Stats
+
+on:
+  schedule:
+    - cron: "0 */12 * * *" # It is updated every 12 hours
+  workflow_dispatch: # You can also run it manually
+
+permissions:
+  contents: write
+
+jobs:
+  generate-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gitignite-output
+
+      - name: Restore years cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .gitignite-cache
+          key: gitignite-years-${{ github.repository_owner }}-${{ github.run_id }}
+          restore-keys: |
+            gitignite-years-${{ github.repository_owner }}-
+
+      - name: Generate GitIgnite cards
+        uses: Edmendez-dev/git-ignite@v1
+        with:
+          gh_token: ${{ secrets.GH_PAT }}
+          user_name: ${{ github.repository_owner }}
+          theme: classic
+          output_path: stats
+
+      - name: Commit y push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stats/*.svg
+          git diff --staged --quiet || (git commit --amend --no-edit && git push --force)
+
+      - name: Save years cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .gitignite-cache
+          key: gitignite-years-${{ github.repository_owner }}-${{ github.run_id }}
