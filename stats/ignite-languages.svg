@@ -1,0 +1,287 @@
+<svg width="495" height="237" viewBox="0 0 495 237" fill="none"
+     xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Top languages for Edmendez-dev">
+  <title>Most Used Languages — Edmendez-dev</title>
+  <defs>
+    <clipPath id="card-clip">
+      <rect width="495" height="237" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .card-bg { fill: #0D1117; }
+
+    .title-text {
+      font: 600 13px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #8B949E;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .username-text {
+      font: bold 15px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #E6EDF3;
+    }
+
+    /* Full-width bar labels */
+    .bar-label {
+      font: 600 10px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #FFFFFF;
+      dominant-baseline: auto;
+    }
+    .pct-label {
+      font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #6e7681;
+      dominant-baseline: auto;
+    }
+
+    /* Chip labels */
+    .chip-label {
+      font: 600 10px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #C9D1D9;
+      dominant-baseline: auto;
+    }
+    .chip-pct {
+      font-weight: 400;
+      fill: #6e7681;
+    }
+
+    /* Donut center */
+    .donut-center-name {
+      font: bold 13px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #E6EDF3;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .donut-center-sub {
+      font: 400 9px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #484F58;
+      text-anchor: middle;
+    }
+
+    /* INTRO ANIMATIONS */
+    @keyframes card-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .card-group {
+      animation: card-in 0.5s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    @keyframes bar-grow {
+      from { clip-path: inset(0 100% 0 0); opacity: 0; }
+      to   { clip-path: inset(0 0% 0 0);   opacity: 1; }
+    }
+    .lang-bar {
+      clip-path: inset(0 100% 0 0);
+      animation: bar-grow 0.6s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    @keyframes row-in {
+      from { opacity: 0; transform: translateX(-8px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .lang-row {
+      opacity: 0;
+      animation: row-in 0.45s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    @keyframes chip-in {
+      from { opacity: 0; transform: scale(0.85); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    .lang-chip {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: chip-in 0.35s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    @keyframes donut-draw {
+      from { stroke-dashoffset: var(--seg-len); opacity: 0; }
+      to   { stroke-dashoffset: 0; opacity: 1; }
+    }
+    .donut-seg {
+      stroke-dasharray: var(--seg-len);
+      stroke-dashoffset: var(--seg-len);
+      opacity: 0;
+      animation: donut-draw 0.7s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    @keyframes center-pop {
+      0%   { opacity: 0; transform: scale(0.7); }
+      80%  { opacity: 1; transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .donut-center {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: center-pop 0.55s cubic-bezier(0.22,1,0.36,1) 0.45s both;
+    }
+  </style>
+
+  <g class="card-group">
+    <g clip-path="url(#card-clip)">
+      <!-- Background -->
+      <rect class="card-bg" width="495" height="237" rx="10"/>
+
+      <!-- Header -->
+      <text x="18" y="23" class="title-text">Most Used Languages</text>
+      <text x="477" y="23" text-anchor="end" class="username-text">@Edmendez-dev</text>
+
+      <!-- Separator -->
+      <line x1="18" y1="32" x2="360" y2="32" stroke="#21262D" stroke-width="1"/>
+
+      <!-- Bar chart rows (top 6) -->
+
+      <!-- row 0: TypeScript -->
+      <g class="lang-row" style="animation-delay:0.00s">
+        <rect x="18" y="50" width="292" height="17" rx="4" fill="#161B22"/>
+        <rect class="lang-bar" x="18" y="50" width="292" height="17" rx="4" fill="#3178c6"
+              style="animation-delay:0.00s;"
+              filter="url(#bar-glow-0)"/>
+        <text x="25" y="62" class="bar-label">TypeScript</text>
+        <text x="316" y="62" class="pct-label">52.2%</text>
+      </g>
+      <defs>
+        <filter id="bar-glow-0" x="-10%" y="-40%" width="120%" height="180%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feFlood flood-color="#59a0ee" flood-opacity="0.35" result="color"/>
+          <feComposite in="color" in2="blur" operator="in" result="glow"/>
+          <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- row 1: Vue -->
+      <g class="lang-row" style="animation-delay:0.07s">
+        <rect x="18" y="74" width="292" height="17" rx="4" fill="#161B22"/>
+        <rect class="lang-bar" x="18" y="74" width="112" height="17" rx="4" fill="#41b883"
+              style="animation-delay:0.07s;"
+              filter="url(#bar-glow-1)"/>
+        <text x="25" y="86" class="bar-label">Vue</text>
+        <text x="316" y="86" class="pct-label">20.1%</text>
+      </g>
+      <defs>
+        <filter id="bar-glow-1" x="-10%" y="-40%" width="120%" height="180%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feFlood flood-color="#69e0ab" flood-opacity="0.35" result="color"/>
+          <feComposite in="color" in2="blur" operator="in" result="glow"/>
+          <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- row 2: Python -->
+      <g class="lang-row" style="animation-delay:0.14s">
+        <rect x="18" y="98" width="292" height="17" rx="4" fill="#161B22"/>
+        <rect class="lang-bar" x="18" y="98" width="43" height="17" rx="4" fill="#3572A5"
+              style="animation-delay:0.14s;"
+              filter="url(#bar-glow-2)"/>
+        <text x="25" y="110" class="bar-label">Python</text>
+        <text x="316" y="110" class="pct-label">7.7%</text>
+      </g>
+      <defs>
+        <filter id="bar-glow-2" x="-10%" y="-40%" width="120%" height="180%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feFlood flood-color="#5d9acd" flood-opacity="0.35" result="color"/>
+          <feComposite in="color" in2="blur" operator="in" result="glow"/>
+          <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- row 3: Kotlin -->
+      <g class="lang-row" style="animation-delay:0.21s">
+        <rect x="18" y="122" width="292" height="17" rx="4" fill="#161B22"/>
+        <rect class="lang-bar" x="18" y="122" width="35" height="17" rx="4" fill="#A97BFF"
+              style="animation-delay:0.21s;"
+              filter="url(#bar-glow-3)"/>
+        <text x="25" y="134" class="bar-label">Kotlin</text>
+        <text x="316" y="134" class="pct-label">6.3%</text>
+      </g>
+      <defs>
+        <filter id="bar-glow-3" x="-10%" y="-40%" width="120%" height="180%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feFlood flood-color="#d1a3ff" flood-opacity="0.35" result="color"/>
+          <feComposite in="color" in2="blur" operator="in" result="glow"/>
+          <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- row 4: CSS -->
+      <g class="lang-row" style="animation-delay:0.28s">
+        <rect x="18" y="146" width="292" height="17" rx="4" fill="#161B22"/>
+        <rect class="lang-bar" x="18" y="146" width="26" height="17" rx="4" fill="#663399"
+              style="animation-delay:0.28s;"
+              filter="url(#bar-glow-4)"/>
+        <text x="25" y="158" class="bar-label">CSS</text>
+        <text x="316" y="158" class="pct-label">4.6%</text>
+      </g>
+      <defs>
+        <filter id="bar-glow-4" x="-10%" y="-40%" width="120%" height="180%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feFlood flood-color="#8e5bc1" flood-opacity="0.35" result="color"/>
+          <feComposite in="color" in2="blur" operator="in" result="glow"/>
+          <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- row 5: JavaScript -->
+      <g class="lang-row" style="animation-delay:0.35s">
+        <rect x="18" y="170" width="292" height="17" rx="4" fill="#161B22"/>
+        <rect class="lang-bar" x="18" y="170" width="25" height="17" rx="4" fill="#f1e05a"
+              style="animation-delay:0.35s;"
+              filter="url(#bar-glow-5)"/>
+        <text x="25" y="182" class="bar-label">JavaScript</text>
+        <text x="316" y="182" class="pct-label">4.5%</text>
+      </g>
+      <defs>
+        <filter id="bar-glow-5" x="-10%" y="-40%" width="120%" height="180%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feFlood flood-color="#ffff82" flood-opacity="0.35" result="color"/>
+          <feComposite in="color" in2="blur" operator="in" result="glow"/>
+          <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- Extra language chips -->
+
+      <!-- chip: Java -->
+      <g class="lang-chip" style="animation-delay:0.42s">
+        <rect x="18" y="200" width="82" height="18" rx="9" fill="#161B22"/>
+        <circle cx="29" cy="209" r="3" fill="#b07219"/>
+        <text x="36" y="213" class="chip-label">Java <tspan class="chip-pct">2.6%</tspan></text>
+      </g>
+
+      <!-- chip: HTML -->
+      <g class="lang-chip" style="animation-delay:0.47s">
+        <rect x="106" y="200" width="82" height="18" rx="9" fill="#161B22"/>
+        <circle cx="117" cy="209" r="3" fill="#e34c26"/>
+        <text x="124" y="213" class="chip-label">HTML <tspan class="chip-pct">2.0%</tspan></text>
+      </g>
+
+      <!-- Donut chart -->
+      <circle cx="415" cy="100" r="52" stroke="#161B22" stroke-width="14" fill="none"/>
+<path class="donut-seg" d="M 410.469 151.802 A 52 52 0 1 0 415.000 48.000" stroke="#3178c6" stroke-width="14" fill="none" stroke-linecap="round"
+              style="animation-delay:0.00s; --seg-len:170.62;"/>
+<path class="donut-seg" d="M 364.276 111.451 A 52 52 0 0 0 407.764 151.494" stroke="#41b883" stroke-width="14" fill="none" stroke-linecap="round"
+              style="animation-delay:0.06s; --seg-len:65.60;"/>
+<path class="donut-seg" d="M 364.744 86.646 A 52 52 0 0 0 363.747 108.780" stroke="#3572A5" stroke-width="14" fill="none" stroke-linecap="round"
+              style="animation-delay:0.12s; --seg-len:25.05;"/>
+<path class="donut-seg" d="M 373.851 68.208 A 52 52 0 0 0 365.512 84.034" stroke="#A97BFF" stroke-width="14" fill="none" stroke-linecap="round"
+              style="animation-delay:0.18s; --seg-len:20.70;"/>
+<path class="donut-seg" d="M 384.631 57.790 A 52 52 0 0 0 375.571 66.098" stroke="#663399" stroke-width="14" fill="none" stroke-linecap="round"
+              style="animation-delay:0.24s; --seg-len:15.04;"/>
+<path class="donut-seg" d="M 397.479 51.041 A 52 52 0 0 0 386.882 56.258" stroke="#f1e05a" stroke-width="14" fill="none" stroke-linecap="round"
+              style="animation-delay:0.30s; --seg-len:14.56;"/>
+<path class="donut-seg" d="M 405.637 48.850 A 52 52 0 0 0 400.066 50.191" stroke="#b07219" stroke-width="14" fill="none" stroke-linecap="round"
+              style="animation-delay:0.36s; --seg-len:8.46;"/>
+<path class="donut-seg" d="M 412.279 48.071 A 52 52 0 0 0 408.327 48.430" stroke="#e34c26" stroke-width="14" fill="none" stroke-linecap="round"
+              style="animation-delay:0.42s; --seg-len:6.69;"/>
+
+      <!-- Donut center -->
+      <g class="donut-center">
+        <text x="415" y="94" class="donut-center-name">TypeScript</text>
+        <text x="415" y="110" class="donut-center-sub">52.2%</text>
+        <text x="415" y="122" class="donut-center-sub">top lang</text>
+      </g>
+    </g>
+  </g>
+</svg>
