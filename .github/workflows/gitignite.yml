@@ -2,7 +2,8 @@ name: GitIgnite Profile Stats
 
 on:
   schedule:
-    - cron: "0 */12 * * *" # It is updated every 12 hours
+    - cron: "0 12 * * *"
+    - cron: "55 23 * * *"
   workflow_dispatch: # You can also run it manually
 
 permissions:
